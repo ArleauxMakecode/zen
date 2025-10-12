@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PACKAGE_NAME="zenity"
+
+if ! dpkg -l | grep -q "$PACKAGE_NAME"; then
+    echo "$PACKAGE_NAME is not installed. Installing..."
+    ./zen.sh
+else
+    zenity --info --title="Done!" --text="You may close the application."
+fi
